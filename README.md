@@ -1,4 +1,4 @@
-# Counter javascript test boilerplate
+# Counter JavaScript test
 
 # Includes
 - **Browserify** for mudularity
