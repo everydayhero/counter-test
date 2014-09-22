@@ -22,4 +22,4 @@ $ npm start         # start server on localhost:5000
 
 | Example UI            |
 |:--------------------- |
-|![Example](https://github.com/everydayhero/counter-test/example_ui.png)|
+|![Example](https://raw.githubusercontent.com/everydayhero/counter-test/master/example_ui.png)|
