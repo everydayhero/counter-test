@@ -10,7 +10,7 @@
 |![Example](https://raw.githubusercontent.com/everydayhero/counter-test/master/example_ui.png)|
 
 ## Provided
-You can use the boilerplate provided in the repo, or create you own structure if you prefer.
+You can use the boilerplate provided in the repo, or create your own structure if you prefer.
 
 ### Includes
 - **[Browserify](http://browserify.org/)** for modularity
