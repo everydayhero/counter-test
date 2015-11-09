@@ -21,6 +21,9 @@ You can use the boilerplate provided in the repo, or create your own structure i
 - **[Express](http://expressjs.com/)** to serve the application on PORT 5000
 
 ### Commands
+
+> Assumes you have node 0.12 installed. We are aware of issues installing on node 4+.
+
 ```sh
 $ npm run setup     # install global dependencies, node modules and build production assets
 $ npm run build     # build assets
