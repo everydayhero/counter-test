@@ -2,5 +2,6 @@
 
 var React = require('react');
 var App = require('./components/App');
+var ReactDOM = require('react-dom');
 
-React.renderComponent(<App/>, document.body);
+ReactDOM.render(<App/>, document.getElementById('counter'));
