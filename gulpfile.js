@@ -4,6 +4,8 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
 var src = {};
 var exclude = [
@@ -16,7 +18,7 @@ var exclude = [
   '!./dist/**'
 ];
 
-gulp.task('build', function() {
+gulp.task('scripts', function() {
   src.scripts = ['./**/*.js'].concat(exclude);
 
   var bundler = browserify({
@@ -32,4 +34,17 @@ gulp.task('build', function() {
     .pipe(gulp.dest('./dist/scripts'));
 });
 
+gulp.task('styles', function() {
+  return gulp
+    .src([ 'src/styles.scss' ])
+    .pipe(sass({
+      sourceMap: 'scss',
+      sourceComments: 'normal',
+      precision: 10
+    }))
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('./dist/styles'));
+});
+
+gulp.task('build', ['scripts', 'styles']);
 gulp.task('default', ['build']);

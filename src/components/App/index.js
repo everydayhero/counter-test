@@ -14,7 +14,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div className="App">
-         <h1>Counter App</h1>
+         <h1 className="App__header">Counter App</h1>
        </div>
     );
   },
