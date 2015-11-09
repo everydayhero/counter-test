@@ -7,35 +7,42 @@
   "author": "EverydayHero",
   "scripts": {
     "setup": "npm install && npm run build && npm test",
-    "build": "npm run scripts",
-    "build-dev": "npm run scripts-dev && npm run styles-dev",
-    "scripts": "NODE_ENV=production browserify ./src/application.js | uglifyjs -cm > ./public/scripts/application.js",
-    "scripts-dev": "NODE_ENV=development browserify ./src/application.js > ./public/scripts/application.js",
+    "build": "gulp build",
     "start": "node server.js",
-    "test": "NODE_ENV=development node_modules/.bin/jest"
+    "test": "TEST_MODE=true && mocha `find . -name '*-test.js' -not -path '*node_modules*'`"
   },
   "devDependencies": {
-    "browserify": "~2.36.0",
-    "uglify-js": "~2.4.13",
-    "jest-cli": "^0.1.17",
-    "reactify": "~0.14.0",
-    "react": "~0.11.2",
-    "react-tools": "~0.11.1"
+    "babel": "^5.6.14",
+    "blanket": "^1.1.6",
+    "browserify": "~6.3.3",
+    "uglify-js": "~2.5.0",
+    "react": "~0.12.2",
+    "react-tools": "~0.12.2",
+    "chai": "^3.0.0",
+    "glob": "^5.0.13",
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.0",
+    "jsdom": "^3.1.2",
+    "lodash": "^3.0.0",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0",
+    "vinyl-buffer": "~1.0.0",
+    "vinyl-source-stream": "^1.0.0",
+    "mocha": "^2.2.5",
+    "mocha-lcov-reporter": "0.0.2",
+    "babelify": "^6.1.2"
   },
   "browserify": {
     "transform": [
-      "reactify"
-    ]
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react"
+      "babelify"
     ]
   },
   "dependencies": {
     "compression": "~1.0.8",
     "express": "~4.4.5",
     "morgan": "~1.1.1"
-  }
+  },
+  "engines" : { "node" : "0.12" }
 }

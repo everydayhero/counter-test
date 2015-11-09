@@ -3,7 +3,7 @@ var app         = express();
 var compression = require('compression');
 var morgan      = require('morgan');
 
-var staticPath  = __dirname + '/public/';
+var staticPath  = __dirname + '/dist/';
 var port        = Number(5000);
 
 app.use(morgan());

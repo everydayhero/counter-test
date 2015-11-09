@@ -1,20 +1,21 @@
-/** @jsx react.DOM */
 "use strict";
 
-var react     = require('react');
+var React = require('react');
 
-module.exports = react.createClass({
+module.exports = React.createClass({
   displayName: 'App',
 
   getInitialState: function() {
     return {
-      total: 0,
+      total: 0
     }
   },
 
   render: function() {
-    return <div className="App">
-             <h1>Counter App</h1>
-           </div>;
+    return (
+      <div className="App">
+        <h1 className="App__header">Counter App</h1>
+      </div>
+    );
   },
 });
