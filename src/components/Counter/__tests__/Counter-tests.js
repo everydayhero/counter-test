@@ -15,7 +15,6 @@ describe("Counter display component", () => {
       <Counter
         name="Test counter"
         count={0}
-        onIncrementClicked
       />
     );
   });

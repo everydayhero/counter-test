@@ -32,8 +32,8 @@ const Counter = ({
 Counter.propTypes = {
   name: React.PropTypes.string.isRequired,
   count: React.PropTypes.number.isRequired,
-  onIncrementClicked: React.PropTypes.function,
-  onDecrementClicked: React.PropTypes.function
+  onIncrementClicked: React.PropTypes.func,
+  onDecrementClicked: React.PropTypes.func
 };
 
 export default Counter;
