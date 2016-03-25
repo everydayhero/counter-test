@@ -10,10 +10,24 @@ import {
 } from "../../../actions/counters-actions";
 
 export class CounterContainer extends React.Component {
+  constructor() {
+    super();
+    this.handleCounterDecrement = this.handleCounterDecrement.bind(this);
+    this.handleCounterIncrement = this.handleCounterIncrement.bind(this);
+  }
+
+  handleCounterIncrement() {
+    const {incrementCounter, index} = this.props;
+    incrementCounter(index);
+  }
+
+  handleCounterDecrement() {
+    const {decrementCounter, index} = this.props;
+    decrementCounter(index);
+  }
+
   render() {
     const {
-      incrementCounter,
-      decrementCounter,
       name,
       count
     } = this.props;
@@ -21,8 +35,8 @@ export class CounterContainer extends React.Component {
       <Counter
         name={name}
         count={count}
-        onIncrementClicked={incrementCounter}
-        onDecrementClicked={decrementCounter}
+        onIncrementClicked={this.handleCounterIncrement}
+        onDecrementClicked={this.handleCounterDecrement}
       />
     );
   }

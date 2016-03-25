@@ -5,16 +5,18 @@ import React from "react";
 import {expect} from "chai";
 import * as sinon from "sinon";
 
-import AddForm from "../display/AddForm";
+import AddForm from "../display/AddCounter";
 
-describe("AddForm display component", () => {
-  let addForm, formSubmitStub;
+describe("AddCounter display component", () => {
+  let addForm, formSubmitStub, counterInputStub;
 
   beforeEach(() => {
     formSubmitStub = sinon.stub();
+    counterInputStub = sinon.stub();
     addForm = shallow(
       <AddForm
-        onFormSubmitted={formSubmitStub}
+        onCounterAdded={formSubmitStub}
+        onCounterNameChanged={counterInputStub}
       />
     );
   });
@@ -34,14 +36,26 @@ describe("AddForm display component", () => {
   it("should prevent page reload on form submit", () => {
     const preventDefault = sinon.stub();
     const event = {preventDefault};
+
     addForm.simulate("submit", event);
     expect(event.preventDefault.called).to.be.true;
   });
 
-  it("should call onFormSubmitted on form submit", () => {
+  it("should call onCounterAdded on form submit", () => {
     const preventDefault = sinon.stub();
     const event = {preventDefault};
     addForm.simulate("submit", event);
     expect(formSubmitStub.called).to.be.true;
   });
+
+  it("should call onCounterNameChange on input value change", () => {
+    const preventDefault = sinon.stub();
+    const event = {preventDefault, target: {
+      value: "New Counter"
+    }};
+    const input = addForm.find("input");
+    input.simulate("change", event);
+    expect(counterInputStub.calledWith(event)).to.be.true;
+  });
+  
 });
