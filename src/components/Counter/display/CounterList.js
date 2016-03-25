@@ -8,7 +8,12 @@ const CounterList = ({
   counters
 }) => (
   <div className="counter-list">
-    {counters.map(counter => <CounterContainer key={counter.name} />)}
+    {counters.map((counter, index) => (
+      <CounterContainer
+        key={counter.name}
+        index={index}
+      />
+    ))}
   </div>
 );
 CounterList.propTypes = {
