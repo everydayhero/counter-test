@@ -1,21 +1,14 @@
 "use strict";
 
-var React = require('react');
+import React from "react";
+import {Provider} from "react-redux";
 
-module.exports = React.createClass({
-  displayName: 'App',
+import store from "./store";
 
-  getInitialState: function() {
-    return {
-      total: 0
-    }
-  },
-
-  render: function() {
-    return (
-      <div className="App">
-        <h1 className="App__header">Counter App</h1>
-      </div>
-    );
-  },
-});
+export default () => (
+  <Provider store={store}>
+    <div className="App">
+      <h1 className="App__header">Counter App</h1>
+    </div>
+  </Provider>
+);

@@ -1,7 +1,8 @@
 "use strict";
 
-var React = require('react');
-var App = require('./components/App');
-var ReactDOM = require('react-dom');
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(<App/>, document.getElementById('counter'));
+import App from "./components/App";
+
+ReactDOM.render(<App/>, document.getElementById("counter"));

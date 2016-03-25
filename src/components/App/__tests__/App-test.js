@@ -1,16 +1,20 @@
 "use strict";
 
-describe('App', function() {
-  var App = require('../index');
-  var component;
+import React from "react";
+import {shallow} from "enzyme";
+import {expect} from "chai";
+import App from "../";
+
+describe("App", function() {
+  let component;
 
   beforeEach(function() {
-    component = renderIntoDocument(<App/>);
+    component = shallow(<App/>);
   });
 
-  it('should render the App header', function() {
-    var header = findByTag(component, 'h1');
+  it("should render the App header", function() {
+    const header = component.find("h1");
 
-    expect(header.getDOMNode().textContent).to.contain('Counter App');
+    expect(header.text()).to.contain("Counter App");
   });
 });

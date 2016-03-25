@@ -22,6 +22,7 @@
     "blanket": "^1.1.6",
     "browserify": "^13.0.0",
     "chai": "^3.0.0",
+    "deep-freeze": "0.0.1",
     "enzyme": "^2.2.0",
     "eslint": "^2.4.0",
     "eslint-plugin-react": "^4.2.3",
