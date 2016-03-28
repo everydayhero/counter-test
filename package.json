@@ -9,9 +9,11 @@
     "setup": "npm install && npm run build && npm test",
     "build": "gulp build",
     "start": "node server.js",
-    "test": "TEST_MODE=true && mocha --compilers js:babel-register `find . -name '*-test.js' -not -path '*node_modules*'`"
+    "test": "_mocha --compilers js:babel-register $(find src -name '*-tests.js')",
+    "coverage": "babel-node node_modules/.bin/isparta cover --root src/ _mocha -- $(find src -name '*-tests.js')"
   },
   "devDependencies": {
+    "babel-cli": "^6.6.5",
     "babel-core": "^6.7.4",
     "babel-eslint": "^6.0.0-beta.6",
     "babel-polyfill": "^6.7.4",
@@ -31,6 +33,7 @@
     "gulp-autoprefixer": "^3.1.0",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-sass": "^2.1.0",
+    "isparta": "^4.0.0",
     "jsdom": "^7.0.0",
     "lodash": "^3.0.0",
     "mocha": "^2.4.0",
