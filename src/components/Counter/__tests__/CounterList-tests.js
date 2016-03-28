@@ -27,7 +27,23 @@ describe("CounterList display component", () => {
   });
 
   it("should render a CounterContainer for each counters item", () => {
-    let counters = counterList.find(CounterContainer);
+    const counters = counterList.find(CounterContainer);
     expect(counters).to.have.length(2);
+  });
+
+  it("should set counter name as the key prop on its CounterContainer", () => {
+    const counters = counterList.find(CounterContainer);
+    const firstCounter = counters.get(0);
+    const secondCounter = counters.get(1);
+    expect(firstCounter.key).to.equal("Counter");
+    expect(secondCounter.key).to.equal("Other counter");
+  });
+
+  it("should set index in the Array as a prop on CounterContainer", () => {
+    const counters = counterList.find(CounterContainer);
+    const firstCounter = counters.get(0);
+    const secondCounter = counters.get(1);
+    expect(firstCounter.props.index).to.equal(0);
+    expect(secondCounter.props.index).to.equal(1);
   });
 });
