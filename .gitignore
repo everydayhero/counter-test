@@ -3,3 +3,4 @@ node_modules
 dist/scripts/application.js
 dist/styles/styles.css
 coverage/
+.idea
