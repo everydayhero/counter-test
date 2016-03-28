@@ -16,7 +16,9 @@ const AddCounter = ({
       type="text"
       id="counter-name-entry"
       name="name"
-      onChange={onCounterNameChanged}
+      onChange={(event) => {
+        onCounterNameChanged(event.target.value);
+      }}
     />
 
     <button type="submit" className="button">Add</button>

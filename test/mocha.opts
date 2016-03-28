@@ -1,3 +1,5 @@
 --recursive
 --ui bdd
+--require test/helpers/testdom
 --require babel-polyfill
+

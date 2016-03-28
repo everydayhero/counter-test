@@ -12,9 +12,10 @@ export default () => (
     <div className="App">
       <h1 className="App__header">Counter App</h1>
 
-      <AddCounterContainer />
-
       <CounterListContainer />
+
+      <AddCounterContainer />
+      
     </div>
   </Provider>
 );

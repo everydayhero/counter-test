@@ -13,15 +13,13 @@ export class AddCounterContainer extends React.Component {
     this.handleCounterAdded = this.handleCounterAdded.bind(this);
   }
 
-  handleCounterNameChange(event) {
-    this.counterName = event.target.value;
-    this.input = event.target;
+  handleCounterNameChange(counterName) {
+    this.counterName = counterName;
   }
 
   handleCounterAdded() {
     const {addCounter} = this.props;
     addCounter(this.counterName);
-    this.input.value = "";
   }
 
   render() {

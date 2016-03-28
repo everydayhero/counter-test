@@ -2,7 +2,9 @@
 
 import {shallow} from "enzyme";
 import React from "react";
-import {expect} from "chai";
+import chai, {expect} from "chai";
+import sinonChai from "sinon-chai";
+chai.use(sinonChai);
 import * as sinon from "sinon";
 
 import AddForm from "../display/AddCounter";
@@ -55,7 +57,7 @@ describe("AddCounter display component", () => {
     }};
     const input = addForm.find("input");
     input.simulate("change", event);
-    expect(counterInputStub.calledWith(event)).to.be.true;
+    expect(counterInputStub.calledWith("New Counter")).to.be.true;
   });
   
 });
