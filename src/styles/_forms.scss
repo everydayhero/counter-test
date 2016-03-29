@@ -1,0 +1,6 @@
+@import "definitions";
+
+input[type=text] {
+  min-height: $form-element-height;
+  padding: $form-element-padding;
+}
