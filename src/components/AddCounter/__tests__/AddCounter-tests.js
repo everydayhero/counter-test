@@ -35,6 +35,11 @@ describe("AddCounter display component", () => {
     expect(counterEntry.props().type).to.equal("text");
   });
 
+  it("should limit the size of the counter name entry value", () => {
+    const counterEntry = addForm.find("#counter-name-entry");
+    expect(counterEntry.props().maxLength).to.equal("32");
+  });
+
   it("should prevent page reload on form submit", () => {
     const preventDefault = sinon.stub();
     const event = {preventDefault};

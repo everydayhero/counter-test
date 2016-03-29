@@ -16,6 +16,7 @@ const AddCounter = ({
       type="text"
       id="counter-name-entry"
       name="name"
+      maxLength="32"
       onChange={(event) => {
         onCounterNameChanged(event.target.value);
       }}
