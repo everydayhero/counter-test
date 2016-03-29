@@ -18,6 +18,7 @@ describe("CounterList display component", () => {
     counterList = shallow(
       <CounterList
         counters={counters}
+        total={7}
       />
     );
   });
@@ -46,4 +47,10 @@ describe("CounterList display component", () => {
     expect(firstCounter.props.index).to.equal(0);
     expect(secondCounter.props.index).to.equal(1);
   });
+
+  it("should render the counter total prop", () => {
+    const totalElement = counterList.find(".counters-total");
+    expect(totalElement).to.have.length(1);
+    expect(totalElement.text()).to.match(/7/);
+  })
 });

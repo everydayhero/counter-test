@@ -6,7 +6,10 @@ import CounterList from "../display/CounterList";
 
 function mapStateToProps(state) {
   return {
-    counters: state.counters
+    counters: state.counters,
+    total: state.counters.reduce((prevValue, currentValue) => {
+      return prevValue + currentValue.count;
+    }, 0)
   };
 }
 
