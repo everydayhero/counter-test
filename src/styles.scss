@@ -1,1 +1,16 @@
-@import "components/App/styles.scss";
+@import "../node_modules/normalize.css/normalize";
+
+// Set border-box to default
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@import "styles/typography";
+@import "styles/forms";
+@import "styles/buttons";
+@import "components/App/styles";
+@import "components/Counter/styles";
+@import "components/AddCounter/styles";

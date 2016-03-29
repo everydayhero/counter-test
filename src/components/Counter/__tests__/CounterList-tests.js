@@ -24,7 +24,7 @@ describe("CounterList display component", () => {
   });
 
   it("should render a container element for counters", () => {
-    expect(counterList.props().className).to.include("counter-list");
+    expect(counterList.props().className).to.include("counters-wrapper");
   });
 
   it("should render a CounterContainer for each counters item", () => {

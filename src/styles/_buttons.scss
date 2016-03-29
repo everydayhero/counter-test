@@ -1,0 +1,18 @@
+@import "definitions";
+
+.button {
+  min-height: $form-element-height;
+  min-width: $form-element-height;
+  margin: $button-margin;
+  padding: $button-padding;
+  background: $primary;
+  color: $white;
+  border: none;
+  transition: background 300ms ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $primary-shade;
+  }
+}

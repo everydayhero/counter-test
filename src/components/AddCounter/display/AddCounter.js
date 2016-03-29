@@ -24,6 +24,7 @@ const AddCounter = ({
         id="counter-name-entry"
         name="name"
         maxLength="32"
+        placeholder="E.g. 'Dogs'"
         onChange={(event) => {
           onCounterNameChanged(event.target.value);
         }}

@@ -8,16 +8,19 @@ const CounterList = ({
   counters,
   total
 }) => (
-  <div className="counter-list">
+  <div className="counters-wrapper">
     <div className="counters-total">
-      Total: {total}
+      Total: <span className="counters-total-value">{total}</span>
     </div>
-    {counters.map((counter, index) => (
-      <CounterContainer
-        key={counter.name}
-        index={index}
-      />
-    ))}
+    <div className="counter-list">
+
+      {counters.map((counter, index) => (
+        <CounterContainer
+          key={counter.name}
+          index={index}
+        />
+      ))}
+    </div>
   </div>
 );
 CounterList.propTypes = {
